@@ -1,8 +1,13 @@
 // Define the path to the JSON file
-const jsonPath = "Resources/data.json";
-
 // Use D3 to fetch the data from the JSON file
-d3.json(jsonPath).then(function(data) {
+d3.csv("Resources/full_database_cleaned.utf8.csv")
+  .then(function(data) {
+    console.log(data);
+    // Your code for working with the data goes here
+  })
+  .catch(function(error) {
+    console.log(error);
+  
 
   // Create an empty feature group to hold the markers
   const markerGroup = L.featureGroup().addTo(myMap);
