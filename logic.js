@@ -18,7 +18,7 @@ d3.csv("Resources/full_database_cleaned.utf8.csv")
     for (let i = 0; i < data.length; i++) {
       const row = data[i];
 
-      // Extract the necessary data from the row
+      // Extract the necessary data from the rows
       const city = row.City;
       const state = row.State;
       const date = row["Full Date"];
@@ -26,7 +26,7 @@ d3.csv("Resources/full_database_cleaned.utf8.csv")
       const injured = row["Number Injured"];
 
       // Create a circle marker for the row
-      const marker = L.circleMarker([row.latitude, row.longitude], {
+      const marker = L.circleMarker([row.Latitude, row.Longitude], {
         radius: killed * 2, // Scale the radius based on Number Killed
         fillColor: "red",
         fillOpacity: 0.5
