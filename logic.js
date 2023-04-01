@@ -1,5 +1,12 @@
-// Define the path to the JSON file
-// Use D3 to fetch the data from the JSON file
+// Define myMap and center it on the US
+let myMap = L.map("map", {
+  center: [
+    39.8282, -98.5795
+  ],
+  zoom: 4,
+});
+
+// Define the path to the CSV file and use D3 to fetch the data from the CSV
 d3.csv("Resources/full_database_cleaned.utf8.csv")
   .then(function(data) {
     console.log(data);
@@ -38,9 +45,3 @@ d3.csv("Resources/full_database_cleaned.utf8.csv")
   console.log(error);
 });
 
-let myMap = L.map("map", {
-    center: [
-      39.8282, -98.5795
-    ],
-    zoom: 4,
-  });
