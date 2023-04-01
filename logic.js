@@ -10,38 +10,34 @@ let myMap = L.map("map", {
 d3.csv("Resources/full_database_cleaned.utf8.csv")
   .then(function(data) {
     console.log(data);
-    // Your code for working with the data goes here
+
+    // Create an empty feature group to hold the markers
+    const markerGroup = L.featureGroup().addTo(myMap);
+
+    // Iterate through each row of the CSV data and add a marker for each row
+    for (let i = 0; i < data.length; i++) {
+      const row = data[i];
+
+      // Extract the necessary data from the row
+      const city = row.City;
+      const state = row.State;
+      const date = row["Full Date"];
+      const killed = row["Number Killed"];
+      const injured = row["Number Injured"];
+
+      // Create a circle marker for the row
+      const marker = L.circleMarker([row.latitude, row.longitude], {
+        radius: killed * 2, // Scale the radius based on Number Killed
+        fillColor: "red",
+        fillOpacity: 0.5
+      }).addTo(markerGroup);
+
+      // Create a popup for the marker
+      const popupContent = `<b>City:</b> ${city}<br><b>State:</b> ${state}<br><b>Date:</b> ${date}<br><b>Number Killed:</b> ${killed}<br><b>Number Injured:</b> ${injured}`;
+      marker.bindPopup(popupContent);
+    }
   })
   .catch(function(error) {
     console.log(error);
-  
-
-  // Create an empty feature group to hold the markers
-  const markerGroup = L.featureGroup().addTo(myMap);
-
-  // Loop through the incident data and create a new marker for each incident
-  data.forEach(incident => {
-    const latlng = L.latLng(incident.latitude, incident.longitude);
-
-    // Calculate the radius of the marker based on the number of fatalities
-    const radius = Math.sqrt(incident.fatalities) * 5;
-
-    const marker = L.circleMarker(latlng, {
-      color: 'red',
-      fillColor: '#f03',
-      fillOpacity: 0.5,
-      radius: radius
-    }).addTo(markerGroup);
-
-    // Bind a popup to the marker with the incident information
-    marker.bindPopup(`
-      <b>${incident.location[0]}</b><br>
-      Date: ${incident.date}<br>
-      Deaths: ${incident.fatalities}<br>
-      Injured: ${incident.injured}<br>
-    `);
   });
-}).catch(function(error) {
-  console.log(error);
-});
 
