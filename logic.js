@@ -3,13 +3,18 @@ let myMap = L.map("map", {
   center: [
     39.8282, -98.5795
   ],
-  zoom: 4,
+  zoom: 5,
 });
 
+// Add a tile layer to the map
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+    maxZoom: 18,
+}).addTo(myMap);
+
 // Define the path to the CSV file and use D3 to fetch the data from the CSV
-d3.csv("Resources/full_database_cleaned.utf8.csv")
-  .then(function(data) {
-    console.log(data);
+d3.csv("/Resources/full_database_cleaned.utf8.csv", function(data) {
+  console.log(data);
 
     // Create an empty feature group to hold the markers
     const markerGroup = L.featureGroup().addTo(myMap);
@@ -27,8 +32,8 @@ d3.csv("Resources/full_database_cleaned.utf8.csv")
 
       // Create a circle marker for the row
       const marker = L.circleMarker([row.Latitude, row.Longitude], {
-        radius: killed * 2, // Scale the radius based on Number Killed
-        fillColor: "red",
+        radius: killed * 5, // Scale the radius based on Number Killed
+        color: "red",
         fillOpacity: 0.5
       }).addTo(markerGroup);
 
