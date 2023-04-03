@@ -13,7 +13,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(myMap);
 
 // Define the path to the CSV file and use D3 to fetch the data from the CSV
-d3.csv("/Resources/full_database_cleaned.utf8.csv", function(data) {
+d3.csv("/Resources/Mother Jones - Mass Shootings Database, 1982 - 2023 - Sheet1.csv", function(data) {
   console.log(data);
 
     // Create an empty feature group to hold the markers
@@ -24,21 +24,22 @@ d3.csv("/Resources/full_database_cleaned.utf8.csv", function(data) {
       const row = data[i];
 
       // Extract the necessary data from the rows
-      const city = row.City;
-      const state = row.State;
-      const date = row["Full Date"];
-      const killed = row["Number Killed"];
-      const injured = row["Number Injured"];
+      const caseName = row.case;
+      const location = row.location;
+      const date = row.date;
+      const fatalities = row.fatalities;
+      const injured = row.injured;
+      const summary = row.summary;
 
       // Create a circle marker for the row
-      const marker = L.circleMarker([row.Latitude, row.Longitude], {
-        radius: killed * 5, // Scale the radius based on Number Killed
+      const marker = L.circleMarker([row.latitude, row.longitude], {
+        radius: fatalities * 5, // Scale the radius based on Number Killed
         color: "red",
         fillOpacity: 0.5
       }).addTo(markerGroup);
 
       // Create a popup for the marker
-      const popupContent = `<b>City:</b> ${city}<br><b>State:</b> ${state}<br><b>Date:</b> ${date}<br><b>Number Killed:</b> ${killed}<br><b>Number Injured:</b> ${injured}`;
+      const popupContent = `<b>Case:</b> ${caseName}<br><b>Location:</b> ${location}<br><b>Date:</b> ${date}<br><b>Fatalities:</b> ${fatalities}<br><b>Injured:</b> ${injured}<br><b>Summary:</b> ${summary}`;
       marker.bindPopup(popupContent);
     }
   })
