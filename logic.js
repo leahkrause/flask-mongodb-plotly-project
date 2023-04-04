@@ -26,12 +26,16 @@ d3.csv("/Resources/Mother Jones - Mass Shootings Database, 1982 - 2023 - Sheet1.
 
     // Create empty layer groups for each decade
     const layers = {
-      "1980s": L.featureGroup().addTo(myMap),
+      "1980s": L.featureGroup(),
       "1990s": L.featureGroup(),
       "2000s": L.featureGroup(),
       "2010s": L.featureGroup(),
       "2020s": L.featureGroup(),
     };
+  // Add all the decade layers to the map
+  for (const decade in layers) {
+    layers[decade].addTo(myMap);
+}
 
     // Iterate through each row of the CSV data and add a marker for each row to its corresponding decade layer
     for (let i = 0; i < data.length; i++) {
@@ -61,11 +65,11 @@ d3.csv("/Resources/Mother Jones - Mass Shootings Database, 1982 - 2023 - Sheet1.
       marker.bindPopup(popupContent);
       console.log(layers[decade].getLayers());
     }
-
+    
     // Add the decade layers to the map and create a control layer to toggle between them
     L.control.layers(null, layers).addTo(myMap);
-    layers["1980s"].addTo(myMap); // Start with the 1980s layer selected
   })
+  
   .catch(function(error) {
     console.log(error);
   });
