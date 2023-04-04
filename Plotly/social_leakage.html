@@ -14,23 +14,29 @@
 
 			console.log(csvData);
 
-			var values = [];
-			var labels = [];
+			var total = csvData.length;
+			var count1 = 0;
+			var count0 = 0;
 
 			csvData.forEach(function(row) {
-				// labels.push(row[0]); 
-				values.push(+row[73]);          
+				if(+row['Social Leakage�'] === 1) {
+					count1++;
+				} else if(+row['Social Leakage�'] === 0) {
+					count0++;
+				}
 			});
-            console.log();
+
+			var percent1 = (count1 / total) * 100;
+			var percent0 = (count0 / total) * 100;
 
 			var data = [{
-				values: values,
-				// labels: labels,
-				type: 'bar'
+				values: [percent1, percent0],
+				labels: ['Intent Leaked Prior to Shooting', 'No Intent Leaked Prior to Shooting'],
+				type: 'pie'
 			}];
 
 			var layout = {
-				title: 'Relationship with Other Shooting(s)',
+				title: 'Social Leakage',
 				showlegend: true,
 				legend: {
 					x: 1,
@@ -49,7 +55,9 @@
 				}
 			};
 
-			Plotly.newPlot("plot", data, layout);
+			var config = {responsive: true};
+
+			Plotly.newPlot("plot", data, layout, config);
 
 		}).catch(function(error) {
 			console.log(error);
