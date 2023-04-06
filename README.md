@@ -1,8 +1,5 @@
 # project-3
-
-![Screenshot 2023-04-06 at 12 03 51 PM](https://user-images.githubusercontent.com/115597437/230472085-84323f55-f1f6-42df-ac2a-0b28ed048181.png)
-
-
+QR code at the bottom for our website. 
 ![map](https://i.imgur.com/Wy08HEY.png)
 
 ## Overview
@@ -22,3 +19,6 @@ Analysis will then involve a combination of descriptive statistics, data visuali
 ## Ethics and Bias
 Mass shootings are a highly sensitive and controversial topic, and it is important to approach this analysis with sensitivity and awareness of potential biases. In particular, it will be important to avoid perpetuating harmful stereotypes or reinforcing pre-existing political positions.
 To mitigate these risks, the analysis will be conducted in a transparent and open manner, with a focus on using data and statistics to inform conclusions. Where appropriate, the analysis will also acknowledge the limitations of the data and the potential for bias or confounding factors to affect the results.
+
+
+![Screenshot 2023-04-06 at 12 03 51 PM](https://user-images.githubusercontent.com/115597437/230472085-84323f55-f1f6-42df-ac2a-0b28ed048181.png)
