@@ -1,5 +1,7 @@
 # project-3
 
+![map](https://i.imgur.com/Wy08HEY.png)
+
 ## Overview
 
 This project is focused on analyzing mass shootings in the USA over the past several decades. The goal is to gain insights into the frequency, location, and other characteristics of these events, as well as to explore potential correlations with various social and political factors.
