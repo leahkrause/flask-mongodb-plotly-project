@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project 3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+    body {font-family: "Open Sans"}
+    </style>
+  
+
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""
+/>
+<style>
+  .leaflet-tile-loaded {
+    filter: brightness(1) invert(1) grayscale(10);
+  }
+  .leaflet-container a {
+    color: #000000;
+  }
+  .leaflet-container .leaflet-control-attribution {
+    background: none;
+    background-color: #fff;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
+
+
+
+</head>
+<body class="w3-light-grey">
+
+  
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-48 w3-white">
+    <h1 class="w3-jumbo"><b>Mass Shootings in America</b></h1>
+    <h6><span class="w3-text">Correlating Factors</span></h6>
+    <img class="w3-image" src="https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/3KDPGV3YWFFHNG2V3LMI4K4L3I.jpg" alt="Mass Shooting" width="300" height="250">
+  </header>
+
+  <!-- Image header -->
+  <header class="w3-display-container w3-wide" id="home">
+    <h1 class="w3-xlarge w3-text-black w3-hide-small"><b> Mass shootings haunt our nation’s collective conscience. Each breaking-news alert floods the nation with grief, fear, and anger at the countless acts of preventable violence happening in schools, churches, parks, supermarkets, and other places where people are going about their everyday lives. </b></h1>
+    <img class="w3-image" src="/Resources/1.png" alt="Mass Shooting" width="1600" height="1060">
+    <div class="w3-display-left w3-padding-large">
+    </div>
+  </header>
+
+
+
+
+  <!-- Grid -->
+  <div class="w3-row w3-padding w3-border">
+
+    <!-- Blog entries -->
+    <div class="w3-col l8 s12">
+          
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3><p>Check out <a href="mapindex.html">Shootings map</a>.</p></h3>
+          <h5> <span class="w3-opacity">1966-2022</span></h5>
+        </div>
+
+        <div class="w3-justify">
+          <img src="/Resources/4.png" alt="map" style="width:100%" class="w3-padding-16">
+          <p> The United States has seen a high number of shooting incidents in recent years, with many of them resulting in multiple fatalities. These incidents have occurred in a variety of locations, including schools, workplaces, places of worship, and public spaces such as malls and movie theaters.</p>
+          <p>Above is a visual representation of mass shootings in America since 1966, with markers in sizes corresponding to number of fatalities.</p>
+          <p class="w3-clear"></p>
+        </div>
+      </div>
+
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>Mass Public Shooting Deaths by Incident</h3>
+          <h5><span class="w3-opacity">1966–2022</span></h5>
+        </div>
+
+        <div class="w3-justify">
+          <img src="/Resources/2.png" alt="Girl Hat" style="width:100%" class="w3-padding-16">
+          <p><strong></strong> Mass public shootings are a tragic and devastating phenomenon that has occurred with alarming frequency in the USA in recent years. According to the Database, which defines a mass shooting as an incident in which four or more people are shot, there were 185 mass public shooting incidents in the USA from 1966 to 2022. These incidents resulted in a total of 1363 deaths and 2135 injuries.</p>
+          <p>The graph provided shows the number of incidents and death toll per year. Each Bar has different colors, and each color represents an incident. </p>
+
+        </div>
+      </div>
+      <hr>
+
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>Mental State of Perpetrators </h3>
+          <h5><span class="w3-opacity">Mass Shooters by Mental Illness Diagnosis</span></h5>
+        </div>
+
+        <div class="w3-justify">
+          <img src="/Resources/6.png" alt="Runway" style="width:100%" class="w3-padding-16">
+          <p>The mental state of perpetrators can vary widely depending on the individual and the situation. In some cases, perpetrators may suffer from mental illnesses or personality disorders that contribute to their actions.</p>
+          <p>In other cases, they may be motivated by factors such as anger, revenge, jealousy, or a desire for power and control. 
+            Some common mental health conditions that may be present in perpetrators include antisocial personality disorder, narcissistic personality disorder, borderline personality disorder, and psychosis. These conditions may contribute to violent or criminal behavior in some individuals.</p>
+          <p class="w3-clear"></p>
+          
+          <!-- Blog entry -->
+          <div class="w3-container w3-white w3-margin w3-padding-large">
+            <div class="w3-center">
+              <h3><p><a href="lineindex.html">Population & Mass Shooting Yearly Growth Rate</a>.</p></h3>
+              <h5><span class="w3-opacity">Analyzing the Trends: Population Growth and Mass Shooting Yearly Growth Rates in the United States</span></h5>
+            </div>
+    
+            <div class="w3-justify">
+              <img src="/Resources/7.png" alt="map" style="width:100%" class="w3-padding-16">
+              <p> The United States is the third most populous country in the world, with an estimated population of 332 million people in 2021. The population of the United States has been steadily increasing over the years, but the growth rate has been declining. In the last decade, the population growth rate was around 0.7% per year, but in 2020 it was only 0.35%.</p>
+              <p>There is no clear correlation between the growth rate of the population and the occurrence of mass shootings in the United States. While the population of the United States has been increasing at a declining rate, the number of mass shootings has been increasing in recent years. It's important to note that mass shootings are a complex issue influenced by various factors, including gun laws, mental health, social and economic factors, and other societal issues. Additionally, population growth can also be influenced by various factors such as immigration, birth rates, and mortality rates. Therefore, it is not appropriate to draw a direct correlation between the two factors.</p>
+              <p class="w3-clear"></p>
+            </div>
+          </div>
+
+
+
+          <!-- Example of comment field -->
+          <div id="demo3" style="display:none">
+            <hr>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="https://www.w3schools.com/w3images/girl_mountain.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Jane <span class="w3-opacity w3-medium">April 10, 2015, 7:22 PM</span></h4>
+                <p>That was a great runway show! Thanks for everything.</p>
+              </div>
+            </div>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="https://www.w3schools.com/w3images/boy.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>John <span class="w3-opacity w3-medium">April 8, 2015, 10:32 PM</span></h4>
+                <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+              </div>
+            </div>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="https://www.w3schools.com/w3images/girl_hood.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Anja <span class="w3-opacity w3-medium">April 7, 2015, 9:12 PM</span></h4>
+                <p>Cant wait for the runway to start!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <!-- END BLOG ENTRIES -->
+    </div>
+
+    <!-- About/Information menu -->
+    <div class="w3-col l4">
+      <!-- About Card -->
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-black">
+          <p><h1>Mass Shootings by Decade</h1></p>
+          <p> 1960s.............. 5 </p>
+          <p> 1970s.............. 10 </p>
+          <p> 1980s.............. 23 </p>
+          <p> 1990s.............. 37 </p>
+          <p> 2000s.............. 37 </p>
+          <p> 2010s.............. 56 </p>
+          <p> 2020s.............. 17 </p>
+          <p> ------------------------- </p>
+          <p> Total	                185 </p>
+          <img src="/Resources/3.png" alt="Jane" style="width:100%">
+
+        </div>
+      </div>
+      <hr>
+      
+      <hr>
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h1>Top 5 Deadliest Mass Shooting Incidents</h1>
+        </div>
+        <div class="w3-container w3-white">
+          <div class="w3-container w3-display-container w3-light-grey w3-section" style="height:200px">
+            <img src="/Resources/5.png" alt="Jane" style="width:100%" >
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Posts -->
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h1>Our Team</h1>
+        </div>
+        <ul class="w3-ul w3-hoverable w3-white">
+          <li class="w3-padding-16">
+            <img src="https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Michael H. Banning </span>
+            <br>
+            <span>Michaelhbanning@gmail.com</span>
+          </li>
+
+          <li class="w3-padding-16">
+            <img src="https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Leah Krause</span>
+            <br>
+            <span>Leahrkrause@gmail.com</span>
+          </li>
+
+          <li class="w3-padding-16">
+            <img src="https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Francis Rivera</span>
+            <br>
+            <span>Francisj.rivera@yahoo.com</span>
+          </li>
+
+          <li class="w3-padding-16">
+            <img src="https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Vivian Sun</span>
+            <br>
+            <span>Viviansun0927@gmail.com</span>
+          </li>
+
+          <li class="w3-padding-16">
+            <img src="https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Rashed Alkanawi</span>
+            <br>
+            <span>Rashedkanawi@gmail.com</span>
+          </li>
+        </ul>
+
+        
+      </div>
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h1>Data Source: The Violence Project Database</h1>
+        </div>
+        <div class="w3-container w3-white">
+          <div class="w3-container w3-display-container w3-light-grey w3-section" style="height:200px">
+            <img src="https://www.theviolenceproject.org/wp-content/uploads/2021/05/database-map-words2-1024x631.png" alt="Jane" style="width:100%" >
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+
+<!-- END w3-content -->
+</div>
+
+
+
+<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+<footer class="w3-container w3-dark-grey" style="padding:32px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+ <!-- End footer. -->
+ </footer>
+
+</body>
+</html>
