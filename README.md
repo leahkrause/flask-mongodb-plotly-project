@@ -27,7 +27,4 @@ To mitigate these risks, the analysis will be conducted in a transparent and ope
 
 ![Screenshot 2023-04-06 at 12 03 51 PM](https://user-images.githubusercontent.com/115597437/230472085-84323f55-f1f6-42df-ac2a-0b28ed048181.png)
 
-## Flask-API & Solutions in Mass Shootings in America
-Not everyone who possess a firearm is dangerous, some people use firearms for protection, hunting, or just to showcase and display it. Creating and using these solutions, I myself, grew my knowledge about solutions for mass shootings.
 
-Here is how I created a FLASK-API using the flask code in “app.py”. I also created a html in the Flask. Then used a html along with a css and js script to create the view for the solutions of ways to prevent these mass shootings. I had Input a clickable button to move left and right to see each solution.
