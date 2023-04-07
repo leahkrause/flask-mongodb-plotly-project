@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Plotly.js Pie Chart</title>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+	<div id="plot"></div>
+
+	<script>
+		d3.csv("database_utf8.csv").then(function(csvData) {
+
+			console.log(csvData);
+
+			var total = csvData.length;
+			var count1 = 0;
+			var count0 = 0;
+
+			csvData.forEach(function(row) {
+				if(+row['Social Media Use�'] === 1) {
+					count1++;
+				} else if(+row['Social Media Use�'] === 0) {
+					count0++;
+				}
+			});
+
+			var percent1 = (count1 / total) * 100;
+			var percent0 = (count0 / total) * 100;
+
+			var data = [{
+				values: [percent1, percent0],
+				labels: ['Yes', 'No'],
+				type: 'pie'
+			}];
+
+			var layout = {
+				title: 'Social Media Use',
+				showlegend: true,
+				legend: {
+					x: 1,
+					y: 0.5
+				},
+				font: {
+					family: 'Arial, sans-serif',
+					size: 14,
+					color: '#333'
+				},
+				margin: {
+					l: 50,
+					r: 50,
+					b: 50,
+					t: 80
+				}
+			};
+
+			var config = {responsive: true};
+
+			Plotly.newPlot("plot", data, layout, config);
+
+		}).catch(function(error) {
+			console.log(error);
+		});
+	</script>
+
+</body>
+</html>
